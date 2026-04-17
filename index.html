@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>OMM PRAKASH PADHIARY | AI Architecture Enthusiast</title>
+    <meta name="title" content="Omm Prakash Padhiary | AI Portfolio">
+    <meta name="description" content="Portfolio of Omm Prakash Padhiary, a B.Tech AI student at NIT Rourkela specializing in deep learning, computer vision, and web development.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com/">
+    <meta property="og:title" content="Omm Prakash Padhiary | AI Architecture Enthusiast">
+    <meta property="og:description" content="Explore my projects in machine learning, ROS 2, computer vision, and responsive web development.">
+    <meta property="og:image" content="https://your-domain.com/path-to-a-nice-screenshot-of-your-site.jpg">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+        <div class="decorative-loader" aria-hidden="true">
+            <div class="loader">
+                <div class="box"></div>
+                <svg width="0" height="0">
+                    <defs>
+                        <clipPath id="clipping" clipPathUnits="objectBoundingBox">
+                            <polygon points="0.5,0 0.6,0.2 0.8,0.2 0.7,0.4 0.8,0.6 0.6,0.6 0.5,0.8 0.4,0.6 0.2,0.6 0.3,0.4 0.2,0.2 0.4,0.2" />
+                            <polygon points="0.5,0 0.7,0.2 0.9,0.5 0.7,0.8 0.5,1 0.3,0.8 0.1,0.5 0.3,0.2" />
+                            <polygon points="0.5,0.1 0.8,0.3 0.9,0.7 0.5,0.9 0.1,0.7 0.2,0.3" />
+                            <polygon points="0.5,0.2 0.75,0.4 0.8,0.6 0.5,0.8 0.2,0.6 0.25,0.4" />
+                            <polygon points="0.5,0.3 0.7,0.5 0.5,0.7 0.3,0.5" />
+                            <polygon points="0.5,0.4 0.6,0.5 0.5,0.6 0.4,0.5" />
+                            <polygon points="0.5,0.5 0.55,0.55 0.5,0.6 0.45,0.55" />
+                        </clipPath>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+    <canvas id="blueprintShaderGrid" class="blueprint-shader-grid"></canvas>
+
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <p>Loading Portfolio...</p>
+        </div>
+    </div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text">OPP</span>
+                <span class="logo-bracket">/&gt;</span>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="#hero" class="nav-link active" data-section="hero">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link" data-section="about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#journey" class="nav-link" data-section="journey">Journey</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+                </li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="#contact" class="nav-cta">Let's Connect</a>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="hero" id="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge animate-on-scroll">
+                    <span class="badge-dot"></span>
+                    Open to Internships & Collaborations
+                </div>
+                <h1 class="hero-title animate-on-scroll">
+                    <span class="hero-greeting">Hello, I'm</span>
+                    <span class="hero-name">Omm Prakash Padhiary</span>
+                    <span class="hero-role">
+                        <span id="typedText"></span>
+                        <span class="typed-cursor">|</span>
+                    </span>
+                </h1>
+                <p class="hero-description animate-on-scroll">
+                    A B.Tech student in Artificial Intelligence at NIT Rourkela, passionate about 
+                    AI architecture, machine learning, and building intelligent systems. Currently 
+                    diving deep into computer vision and deep learning while crafting clean web experiences.
+                </p>
+                <div class="hero-buttons animate-on-scroll">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>View My Work</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <span>Get In Touch</span>
+                    </a>
+                </div>
+                <div class="hero-stats animate-on-scroll">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="7">0</span><span class="stat-plus"></span>
+                        <span class="stat-label">Projects Built</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="5">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">ML Models Trained</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="100">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">GitHub Commits</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual animate-on-scroll">
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-border"></div>
+                    <div class="hero-image">
+                        <div class="hero-avatar">
+                            <i class="fas fa-brain"></i>
+                            <span>OPP</span>
+                        </div>
+                    </div>
+                    <div class="floating-card card-1">
+                        <i class="fab fa-python"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="floating-card card-2">
+                        <i class="fas fa-robot"></i>
+                        <span>ML/AI</span>
+                    </div>
+                    <div class="floating-card card-3">
+                        <i class="fab fa-react"></i>
+                        <span>React.js</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="mouse-wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">&lt;about&gt;</span>
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Get to know the person behind the code</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-image animate-on-scroll">
+                    <div class="about-img-wrapper">
+                        <div class="about-avatar">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="experience-badge">
+                            <span class="exp-number"><i class="fas fa-seedling"></i></span>
+                            <span class="exp-text">Always<br>Learning</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content animate-on-scroll">
+                    <h3 class="about-heading">An aspiring AI architect who loves turning data into intelligence</h3>
+                    <p class="about-text">
+                        I'm a B.Tech student in <strong>Artificial Intelligence</strong> at 
+                        <strong>NIT Rourkela</strong>, fascinated by how machines can learn, see, 
+                        and understand the world. My journey started with front-end web development — 
+                        building clean, responsive interfaces with HTML, CSS, JavaScript, and React — 
+                        and has since evolved into a deep passion for AI/ML.
+                    </p>
+                    <p class="about-text">
+                        I have hands-on experience with <strong>machine learning</strong> and am 
+                        currently learning <strong>deep learning</strong> with a strong interest in 
+                        <strong>computer vision</strong>. I love building projects that combine my 
+                        web skills with AI — from RAG-based document systems to ML-powered predictions. 
+                        I'm always eager to learn, experiment, and push my boundaries.
+                    </p>
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Rourkela, Odisha, India</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>prakashomm125@gmail.com</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>B.Tech in Artificial Intelligence</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-university"></i>
+                            <span>NIT Rourkela</span>
+                        </div>
+                    </div>
+                    <div class="about-interests">
+                        <h4><i class="fas fa-heart"></i> Areas of Interest</h4>
+                        <div class="interest-tags">
+                            <span>Computer Vision</span>
+                            <span>Deep Learning</span>
+                            <span>Machine Learning</span>
+                            <span>AI Architecture</span>
+                            <span>NLP / RAG Systems</span>
+                            <span>Front-End Development</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary" download>
+                        <i class="fas fa-download"></i>
+                        <span>Download Resume</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills section" id="skills">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">&lt;skills&gt;</span>
+                <h2 class="section-title">My Skills</h2>
+                <p class="section-subtitle">Technologies and tools I work with & am learning</p>
+            </div>
+            
+            <div class="skills-tabs animate-on-scroll">
+                <button class="skill-tab active" data-tab="aiml">AI / ML</button>
+                <button class="skill-tab" data-tab="hardware">Systems & Hardware</button>
+                <button class="skill-tab" data-tab="frontend">Frontend</button>
+                <button class="skill-tab" data-tab="tools">Tools & Others</button>
+            </div>
+
+            <div class="skills-content">
+                <div class="skills-grid active" id="aiml">
+                    <div class="skill-card animate-on-scroll">
+                        <div class="skill-icon"><i class="fab fa-python"></i></div>
+                        <h4>Python</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
+                        <span class="skill-percent">85%</span>
+                    </div>
+                    <div class="skill-card animate-on-scroll">
+                        <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
+                        <h4>Machine Learning</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-progress="72"></div></div>
+                        <span class="skill-percent">72%</span>
+                    </div>
+                    <div class="skill-card animate-on-scroll">
+                        <div class="skill-icon"><i class="fas fa-brain"></i></div>
+                        <h4>Deep Learning</h4>
+                        <div class="skill-level-badge learning">Currently Learning</div>
+                        <div class="skill-bar"><div class="skill-progress" data-progress="35"></div></div>
+                        <span class="skill-percent">35%</span>
+                    </div>
+                    <div class="skill-card animate-on-scroll">
+                        <div class="skill-icon"><i class="fas fa-eye"></i></div>
+                        <h4>Computer Vision</h4>
+                        <div class="skill-level-badge interested">Exploring</div>
+                        <div class="skill-bar"><div class="skill-progress" data-progress="5"></div></div>
+                        <span class="skill-percent">5%</span>
+                    </div>
+                    <div class="skill-card animate-on-scroll">
+                        <div class="skill-icon"><i class="fas fa-table"></i></div>
+                        <h4>Pandas / NumPy</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-progress="78"></div></div>
+                        <span class="skill-percent">78%</span>
+                    </div>
+                    <div class="skill-card animate-on-scroll">
+                        <div class="skill-icon"><i class="fas fa-project-diagram"></i></div>
+                        <h4>Scikit-Learn</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-progress="70"></div></div>
+                        <span class="skill-percent">70%</span>
+                    </div>
+                    <div class="skill-card animate-on-scroll">
+                        <div class="skill-icon"><i class="fas fa-fire"></i></div>
+                        <h4>TensorFlow / Keras</h4>
+                        <div class="skill-level-badge learning">Currently Learning</div>
+                        <div class="skill-bar"><div class="skill-progress" data-progress="30"></div></div>
+                        <span class="skill-percent">30%</span>
+                    </div>
+                    <div class="skill-card animate-on-scroll">
+                        <div class="skill-icon"><i class="fas fa-file-alt"></i></div>
+                        <h4>RAG / LangChain</h4>
+                        <div class="skill-level-badge learning">Basic Knowledge</div>
+                        <div class="skill-bar"><div class="skill-progress" data-progress="10"></div></div>
+                        <span class="skill-percent">10%</span>
+                    </div>
+                </div>
+
+                <div class="skills-grid" id="hardware">
+                    <div class="skill-card animate-on-scroll">
+                        <div class="skill-icon"><i class="fas fa-microchip"></i></div>
+                        <h4>C / C++</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-progress="75"></div></div>
+                        <span class="skill-percent">75%</span>
+                    </div>
+                    <div class="skill-card animate-on-scroll">
+                        <div class="skill-icon"><i class="fas fa-robot"></i></div>
+                        <h4>ROS 2 (Jazzy)</h4>
+                        <div class="skill-level-badge learning">Currently Learning</div>
+                        <div class="skill-bar"><div class="skill-progress" data-progress="40"></div></div>
+                        <span class="skill-percent">40%</span>
+                    </div>
+                    <div class="skill-card animate-on-scroll">
+                        <div class="skill-icon"><i class="fas fa-memory"></i></div>
+                        <h4>Microcontrollers</h4>
+                        <div class="skill-level-badge interested">ESP32 / STM32</div>
+                        <div class="skill-bar"><div class="skill-progress" data-progress="50"></div></div>
+                        <span class="skill-percent">50%</span>
+                    </div>
+                    <div class="skill-card animate-on-scroll">
+                        <div class="skill-icon"><i class="fas fa-network-wired"></i></div>
+                        <h4>DSA</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-progress="70"></div></div>
+                        <span class="skill-percent">70%</span>
+                    </div>
+                    <div class="skill-card animate-on-scroll">
+                        <div class="skill-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h4>Cybersecurity</h4>
+                        <div class="skill-level-badge learning">Engineering Level</div>
+                        <div class="skill-bar"><div class="skill-progress" data-progress="30"></div></div>
+                        <span class="skill-percent">30%</span>
+                    </div>
+                </div>
+
+                <div class="skills-grid" id="frontend">
+                    <div class="skill-card animate-on-scroll">
+                        <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                        <h4>HTML5</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-progress="90"></div></div>
+                        <span class="skill-percent">90%</span>
+                    </div>
+                    <div class="skill-card animate-on-scroll">
+                        <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+                        <h4>CSS3 / SASS</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
+                        <span class="skill-percent">85%</span>
+                    </div>
+                    <div class="skill-card animate-on-scroll">
+                        <div class="skill-icon"><i class="fab fa-js-square"></i></div>
+                        <h4>JavaScript</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-progress="78"></div></div>
+                        <span class="skill-percent">78%</span>
+                    </div>
+                    <div class="skill-card animate-on-scroll">
+                        <div class="skill-icon"><i class="fab fa-react"></i></div>
+                        <h4>React.js</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-progress="65"></div></div>
+                        <span class="skill-percent">65%</span>
+                    </div>
+                    <div class="skill-card animate-on-scroll">
+                        <div class="skill-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h4>Responsive Design</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-progress="82"></div></div>
+                        <span class="skill-percent">82%</span>
+                    </div>
+                    <div class="skill-card animate-on-scroll">
+                        <div class="skill-icon"><i class="fab fa-bootstrap"></i></div>
+                        <h4>Tailwind / Bootstrap</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-progress="75"></div></div>
+                        <span class="skill-percent">75%</span>
+                    </div>
+                </div>
+
+                <div class="skills-grid" id="tools">
+                    <div class="skill-card animate-on-scroll">
+                        <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+                        <h4>Git / GitHub</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-progress="80"></div></div>
+                        <span class="skill-percent">80%</span>
+                    </div>
+                    <div class="skill-card animate-on-scroll">
+                        <div class="skill-icon"><i class="fas fa-terminal"></i></div>
+                        <h4>Linux / CLI</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-progress="5"></div></div>
+                        <span class="skill-percent">5%</span>
+                    </div>
+                    <div class="skill-card animate-on-scroll">
+                        <div class="skill-icon"><i class="fas fa-code"></i></div>
+                        <h4>VS Code</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-progress="90"></div></div>
+                        <span class="skill-percent">90%</span>
+                    </div>
+                    <div class="skill-card animate-on-scroll">
+                        <div class="skill-icon"><i class="fas fa-book"></i></div>
+                        <h4>Jupyter Notebook</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-progress="82"></div></div>
+                        <span class="skill-percent">82%</span>
+                    </div>
+                    <div class="skill-card animate-on-scroll">
+                        <div class="skill-icon"><i class="fab fa-figma"></i></div>
+                        <h4>Figma (Basics)</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-progress="45"></div></div>
+                        <span class="skill-percent">45%</span>
+                    </div>
+                    <div class="skill-card animate-on-scroll">
+                        <div class="skill-icon"><i class="fas fa-database"></i></div>
+                        <h4>SQL Basics</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-progress="55"></div></div>
+                        <span class="skill-percent">55%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects section" id="projects">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">&lt;projects&gt;</span>
+                <h2 class="section-title">My Projects</h2>
+                <p class="section-subtitle">Things I've built while learning and experimenting</p>
+            </div>
+            
+            <div class="project-showcase">
+                <div class="project-item animate-on-scroll">
+                    <div class="project-item-content">
+                        <div class="project-item-header">
+                            <h3><a href="YOUR_LIVE_DEMO_URL" target="_blank" class="project-title-link">DSA-AI</a></h3>
+                            <div class="project-tags"><span>JavaScript</span><span>API</span></div>
+                        </div>
+                        <p class="project-item-desc">An AI-powered assistant designed to help developers solve Data Structures and Algorithms problems.</p>
+                    </div>
+                    <div class="project-links" style="display: flex; gap: 10px; z-index: 2;">
+                        <a href="https://github.com/omm-prakash18/DSA-AI" class="project-item-link" target="_blank" rel="noopener noreferrer" aria-label="View Source Code" title="Source Code">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="YOUR_LIVE_DEMO_URL" class="project-item-link" target="_blank" rel="noopener noreferrer" aria-label="View Live Demo" title="Live Demo">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            
+                <div class="project-item animate-on-scroll">
+                    <div class="project-item-content">
+                        <div class="project-item-header">
+                            <h3><a href="YOUR_LIVE_DEMO_URL" target="_blank" class="project-title-link">RAG-DSA-Project</a></h3>
+                            <div class="project-tags"><span>JavaScript</span><span>RAG</span></div>
+                        </div>
+                        <p class="project-item-desc">A Retrieval-Augmented Generation (RAG) system tailored for querying and solving complex DSA concepts.</p>
+                    </div>
+                    <div class="project-links" style="display: flex; gap: 10px; z-index: 2;">
+                        <a href="https://github.com/omm-prakash18/RAG-DSA-project" class="project-item-link" target="_blank" rel="noopener noreferrer" aria-label="View Source Code" title="Source Code">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="YOUR_LIVE_DEMO_URL" class="project-item-link" target="_blank" rel="noopener noreferrer" aria-label="View Live Demo" title="Live Demo">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            
+                <div class="project-item animate-on-scroll">
+                    <div class="project-item-content">
+                        <div class="project-item-header">
+                            <h3><a href="YOUR_LIVE_DEMO_URL" target="_blank" class="project-title-link">Next-Word-Predictor</a></h3>
+                            <div class="project-tags"><span>JavaScript</span><span>LSTM</span></div>
+                        </div>
+                        <p class="project-item-desc">A deep learning model utilizing Long Short-Term Memory (LSTM) networks for sequence-based text prediction.</p>
+                    </div>
+                    <div class="project-links" style="display: flex; gap: 10px; z-index: 2;">
+                        <a href="https://github.com/omm-prakash18/next-word-predictor" class="project-item-link" target="_blank" rel="noopener noreferrer" aria-label="View Source Code" title="Source Code">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="YOUR_LIVE_DEMO_URL" class="project-item-link" target="_blank" rel="noopener noreferrer" aria-label="View Live Demo" title="Live Demo">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            
+                <div class="project-item animate-on-scroll">
+                    <div class="project-item-content">
+                        <div class="project-item-header">
+                            <h3><a href="YOUR_LIVE_DEMO_URL" target="_blank" class="project-title-link">House Price Predictor</a></h3>
+                            <div class="project-tags"><span>Jupyter Notebook</span><span>Scikit-Learn</span></div>
+                        </div>
+                        <p class="project-item-desc">A machine learning regression model built to predict housing prices based on multiple feature datasets.</p>
+                    </div>
+                    <div class="project-links" style="display: flex; gap: 10px; z-index: 2;">
+                        <a href="https://github.com/omm-prakash18/ML4E-INDUACTION" class="project-item-link" target="_blank" rel="noopener noreferrer" aria-label="View Source Code" title="Source Code">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="YOUR_LIVE_DEMO_URL" class="project-item-link" target="_blank" rel="noopener noreferrer" aria-label="View Live Demo" title="Live Demo">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            
+                <div class="project-item animate-on-scroll">
+                    <div class="project-item-content">
+                        <div class="project-item-header">
+                            <h3><a href="YOUR_LIVE_DEMO_URL" target="_blank" class="project-title-link">Number Recognizer</a></h3>
+                            <div class="project-tags"><span>Python</span><span>Computer Vision</span></div>
+                        </div>
+                        <p class="project-item-desc">A computer vision application that classifies handwritten digits from pixel data.</p>
+                    </div>
+                    <div class="project-links" style="display: flex; gap: 10px; z-index: 2;">
+                        <a href="https://github.com/omm-prakash18/number-recogniser" class="project-item-link" target="_blank" rel="noopener noreferrer" aria-label="View Source Code" title="Source Code">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="YOUR_LIVE_DEMO_URL" class="project-item-link" target="_blank" rel="noopener noreferrer" aria-label="View Live Demo" title="Live Demo">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            
+                <div class="project-item animate-on-scroll">
+                    <div class="project-item-content">
+                        <div class="project-item-header">
+                            <h3><a href="YOUR_LIVE_DEMO_URL" target="_blank" class="project-title-link">Mini-Cursor</a></h3>
+                            <div class="project-tags"><span>JavaScript</span><span>Web</span></div>
+                        </div>
+                        <p class="project-item-desc">A lightweight, browser-based clone of the popular Cursor AI IDE interface.</p>
+                    </div>
+                    <div class="project-links" style="display: flex; gap: 10px; z-index: 2;">
+                        <a href="https://github.com/omm-prakash18/MINI-CURSOR" class="project-item-link" target="_blank" rel="noopener noreferrer" aria-label="View Source Code" title="Source Code">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="YOUR_LIVE_DEMO_URL" class="project-item-link" target="_blank" rel="noopener noreferrer" aria-label="View Live Demo" title="Live Demo">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="experience section" id="journey">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">&lt;journey&gt;</span>
+                <h2 class="section-title">My Learning Journey</h2>
+                <p class="section-subtitle">How I got here and where I'm heading</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3><i class="fas fa-rocket"></i> Current Focus</h3>
+                            <span class="timeline-company"><i class="fas fa-university"></i> NIT Rourkela</span>
+                        </div>
+                        <span class="timeline-date"><i class="fas fa-calendar"></i> 2024 - Present</span>
+                        <p>Diving into <strong>Deep Learning</strong> and <strong>Computer Vision</strong>. Learning CNNs, image classification, and object detection. Exploring TensorFlow/Keras and building hands-on projects to solidify understanding.</p>
+                        <div class="timeline-tags">
+                            <span>Deep Learning</span><span>Computer Vision</span><span>TensorFlow</span><span>CNNs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3><i class="fas fa-brain"></i> AI/ML Exploration</h3>
+                            <span class="timeline-company"><i class="fas fa-university"></i> NIT Rourkela</span>
+                        </div>
+                        <span class="timeline-date"><i class="fas fa-calendar"></i> 2023 - 2024</span>
+                        <p>Started learning Machine Learning fundamentals — regression, classification, clustering. Built several ML projects including price predictors and sentiment analyzers. Explored RAG systems and basic NLP.</p>
+                        <div class="timeline-tags">
+                            <span>Scikit-Learn</span><span>Pandas</span><span>ML Models</span><span>RAG</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3><i class="fas fa-code"></i> Front-End Development</h3>
+                            <span class="timeline-company"><i class="fas fa-laptop-code"></i> Self-Taught</span>
+                        </div>
+                        <span class="timeline-date"><i class="fas fa-calendar"></i> 2022 - 2023</span>
+                        <p>Learned web development from scratch — HTML, CSS, JavaScript, and React. Built multiple projects including interactive apps, a weather dashboard, and responsive portfolio sites.</p>
+                        <div class="timeline-tags">
+                            <span>HTML/CSS</span><span>JavaScript</span><span>React</span><span>Responsive Design</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3><i class="fas fa-graduation-cap"></i> B.Tech Started</h3>
+                            <span class="timeline-company"><i class="fas fa-university"></i> NIT Rourkela</span>
+                        </div>
+                        <span class="timeline-date"><i class="fas fa-calendar"></i> 2022</span>
+                        <p>Joined NIT Rourkela for B.Tech in Artificial Intelligence. Began learning programming fundamentals with Python and C, data structures, and algorithms. The start of an exciting journey into tech.</p>
+                        <div class="timeline-tags">
+                            <span>Python</span><span>C</span><span>DSA</span><span>Math Foundations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="currently-learning section" id="learning">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">&lt;currently_learning&gt;</span>
+                <h2 class="section-title">What I'm Exploring Now</h2>
+                <p class="section-subtitle">Always growing, always building</p>
+            </div>
+            <div class="learning-grid">
+                
+                <div class="shine-wrapper animate-on-scroll sprint-card" style="grid-column: 1 / -1; margin-bottom: 20px;">
+                    <div class="learning-card shine-inner">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
+                            <div>
+                                <div class="skill-level-badge interested" style="margin-bottom: 12px;"><i class="fas fa-stopwatch"></i> Current 14-Day Sprint</div>
+                                <h3 style="font-size: 1.4rem;">Building a Vision Sensor Model</h3>
+                                <p>Deep diving into robotics, non-blocking C++ code execution for hardware, and bridging the gap between deep learning outputs and real-time sensor processing.</p>
+                            </div>
+                            <div class="learning-icon" style="background: var(--accent-gradient); color: white;">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                        </div>
+                        <div class="timeline-tags" style="margin-top: 10px;">
+                            <span>C++</span><span>ROS 2</span><span>Deep Learning</span><span>Sensors</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shine-wrapper animate-on-scroll">
+                    <div class="learning-card shine-inner">
+                        <div class="learning-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Computer Vision</h3>
+                        <p>Image classification, object detection, OpenCV, and understanding how machines interpret visual data.</p>
+                        <div class="learning-progress">
+                            <div class="learning-bar">
+                                <div class="learning-fill" data-width="30"></div>
+                            </div>
+                            <span>Beginner → Intermediate</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="shine-wrapper animate-on-scroll">
+                    <div class="learning-card shine-inner">
+                        <div class="learning-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3>Deep Learning</h3>
+                        <p>Neural networks, CNNs, backpropagation, and building models with TensorFlow and Keras from scratch.</p>
+                        <div class="learning-progress">
+                            <div class="learning-bar">
+                                <div class="learning-fill" data-width="35"></div>
+                            </div>
+                            <span>Getting Started</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="shine-wrapper animate-on-scroll">
+                    <div class="learning-card shine-inner">
+                        <div class="learning-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>AI Architecture</h3>
+                        <p>Understanding transformer architectures, attention mechanisms, and how large-scale AI systems are designed.</p>
+                        <div class="learning-progress">
+                            <div class="learning-bar">
+                                <div class="learning-fill" data-width="20"></div>
+                            </div>
+                            <span>Exploring</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="shine-wrapper animate-on-scroll">
+                    <div class="learning-card shine-inner">
+                        <div class="learning-icon">
+                            <i class="fas fa-file-code"></i>
+                        </div>
+                        <h3>RAG & LLM Apps</h3>
+                        <p>Building retrieval-augmented generation systems, working with embeddings, vector DBs, and LangChain.</p>
+                        <div class="learning-progress">
+                            <div class="learning-bar">
+                                <div class="learning-fill" data-width="40"></div>
+                            </div>
+                            <span>Basic Projects Built</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">&lt;contact&gt;</span>
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Want to collaborate, chat about AI, or just say hi?</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info animate-on-scroll">
+                    <h3>Let's connect and build something cool together</h3>
+                    <p>I'm always open to learning opportunities, project collaborations, internships, or just having a conversation about AI and technology. Don't hesitate to reach out!</p>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:prakashomm125@gmail.com">prakashomm125@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h4>Location</h4>
+                                <span>Rourkela, Odisha, India</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-university"></i></div>
+                            <div>
+                                <h4>University</h4>
+                                <span>NIT Rourkela</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/omm-prakash18" class="social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/omm-prakash-8225bb35b/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" aria-label="Kaggle"><i class="fab fa-kaggle"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form animate-on-scroll" id="contactForm" action="https://formspree.io/f/YOUR_ACTUAL_FORMSPREE_ID_HERE" method="POST">
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <input type="text" id="name" name="name" required placeholder=" ">
+                            <label for="name">Your Name</label>
+                            <span class="input-border"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <input type="email" id="email" name="email" required placeholder=" ">
+                            <label for="email">Your Email</label>
+                            <span class="input-border"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <input type="text" id="subject" name="subject" required placeholder=" ">
+                            <label for="subject">Subject</label>
+                            <span class="input-border"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
+                            <label for="message">Your Message</label>
+                            <span class="input-border"></span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                    <div class="form-status" id="formStatus"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#hero" class="nav-logo">
+                        <span class="logo-bracket">&lt;</span>
+                        <span class="logo-text">OPP</span>
+                        <span class="logo-bracket">/&gt;</span>
+                    </a>
+                    <p>Aspiring AI Architect | B.Tech AI @ NIT Rourkela</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Me</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/omm-prakash18" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/omm-prakash-8225bb35b/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Kaggle"><i class="fab fa-kaggle"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Omm Prakash Padhiary. All rights reserved. Built with <i class="fas fa-heart"></i> and lots of ☕</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
