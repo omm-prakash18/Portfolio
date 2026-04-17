@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ---------- 3D TILT EFFECT ----------
     if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-        const tiltCards = document.querySelectorAll('.project-item, .skill-card, .learning-card');
+        const tiltCards = document.querySelectorAll('.project-item, .skill-card, .learning-card, .timeline-content');
         
         tiltCards.forEach(card => {
             card.addEventListener('mousemove', (e) => {

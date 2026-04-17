@@ -1217,17 +1217,21 @@ button {
     z-index: 1;
 }
 
+.timeline-content:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent-primary);
+    transform: translateY(-5px); /* Gives it an initial pop before the JS tilt takes over */
+    z-index: 10;
+}
 .timeline-content {
     background: var(--bg-card);
     padding: 28px;
     border-radius: 16px;
     border: 1px solid var(--border-color);
     transition: all 0.3s ease;
-}
-
-.timeline-content:hover {
-    box-shadow: var(--shadow-md);
-    border-color: rgba(108, 99, 255, 0.2);
+    /* Add these two lines for static 3D depth: */
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05), var(--shadow-sm); 
+    transform-style: preserve-3d;
 }
 
 .timeline-header {
