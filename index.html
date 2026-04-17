@@ -19,27 +19,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-        <div class="decorative-loader" aria-hidden="true">
-            <div class="loader">
-                <div class="box"></div>
-                <svg width="0" height="0">
-                    <defs>
-                        <clipPath id="clipping" clipPathUnits="objectBoundingBox">
-                            <polygon points="0.5,0 0.6,0.2 0.8,0.2 0.7,0.4 0.8,0.6 0.6,0.6 0.5,0.8 0.4,0.6 0.2,0.6 0.3,0.4 0.2,0.2 0.4,0.2" />
-                            <polygon points="0.5,0 0.7,0.2 0.9,0.5 0.7,0.8 0.5,1 0.3,0.8 0.1,0.5 0.3,0.2" />
-                            <polygon points="0.5,0.1 0.8,0.3 0.9,0.7 0.5,0.9 0.1,0.7 0.2,0.3" />
-                            <polygon points="0.5,0.2 0.75,0.4 0.8,0.6 0.5,0.8 0.2,0.6 0.25,0.4" />
-                            <polygon points="0.5,0.3 0.7,0.5 0.5,0.7 0.3,0.5" />
-                            <polygon points="0.5,0.4 0.6,0.5 0.5,0.6 0.4,0.5" />
-                            <polygon points="0.5,0.5 0.55,0.55 0.5,0.6 0.45,0.55" />
-                        </clipPath>
-                    </defs>
-                </svg>
-            </div>
-        </div>
+    
     <canvas id="blueprintShaderGrid" class="blueprint-shader-grid"></canvas>
-
-    <div class="cursor-follower" id="cursorFollower"></div>
 
     <div class="loader" id="loader">
         <div class="loader-content">
@@ -176,17 +157,25 @@
                 <p class="section-subtitle">Get to know the person behind the code</p>
             </div>
             <div class="about-grid">
+                
                 <div class="about-image animate-on-scroll">
                     <div class="about-img-wrapper">
-                        <div class="about-avatar">
-                            <i class="fas fa-laptop-code"></i>
+                        <div class="status-indicator">
+                            <span class="status-dot"></span>
+                            <span class="status-text">Available for Internships</span>
                         </div>
+
+                        <div class="about-avatar">
+                            <img src="images/profile.jpg" alt="Omm Prakash Padhiary" class="profile-img">
+                        </div>
+                        
                         <div class="experience-badge">
-                            <span class="exp-number"><i class="fas fa-seedling"></i></span>
-                            <span class="exp-text">Always<br>Learning</span>
+                            <span class="exp-number"><i class="fas fa-microchip"></i></span>
+                            <span class="exp-text">Building<br>Vision Sensors</span>
                         </div>
                     </div>
                 </div>
+
                 <div class="about-content animate-on-scroll">
                     <h3 class="about-heading">An aspiring AI architect who loves turning data into intelligence</h3>
                     <p class="about-text">
@@ -441,7 +430,7 @@
                 <div class="project-item animate-on-scroll">
                     <div class="project-item-content">
                         <div class="project-item-header">
-                            <h3><a href="YOUR_LIVE_DEMO_URL" target="_blank" class="project-title-link">DSA-AI</a></h3>
+                            <h3><a href="#" target="_blank" class="project-title-link">DSA-AI</a></h3>
                             <div class="project-tags"><span>JavaScript</span><span>API</span></div>
                         </div>
                         <p class="project-item-desc">An AI-powered assistant designed to help developers solve Data Structures and Algorithms problems.</p>
@@ -450,7 +439,7 @@
                         <a href="https://github.com/omm-prakash18/DSA-AI" class="project-item-link" target="_blank" rel="noopener noreferrer" aria-label="View Source Code" title="Source Code">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="YOUR_LIVE_DEMO_URL" class="project-item-link" target="_blank" rel="noopener noreferrer" aria-label="View Live Demo" title="Live Demo">
+                        <a href="#" class="project-item-link" target="_blank" rel="noopener noreferrer" aria-label="View Live Demo" title="Live Demo">
                             <i class="fas fa-external-link-alt"></i>
                         </a>
                     </div>
@@ -459,7 +448,7 @@
                 <div class="project-item animate-on-scroll">
                     <div class="project-item-content">
                         <div class="project-item-header">
-                            <h3><a href="YOUR_LIVE_DEMO_URL" target="_blank" class="project-title-link">RAG-DSA-Project</a></h3>
+                            <h3><a href="#" target="_blank" class="project-title-link">RAG-DSA-Project</a></h3>
                             <div class="project-tags"><span>JavaScript</span><span>RAG</span></div>
                         </div>
                         <p class="project-item-desc">A Retrieval-Augmented Generation (RAG) system tailored for querying and solving complex DSA concepts.</p>
@@ -468,7 +457,7 @@
                         <a href="https://github.com/omm-prakash18/RAG-DSA-project" class="project-item-link" target="_blank" rel="noopener noreferrer" aria-label="View Source Code" title="Source Code">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="YOUR_LIVE_DEMO_URL" class="project-item-link" target="_blank" rel="noopener noreferrer" aria-label="View Live Demo" title="Live Demo">
+                        <a href="#" class="project-item-link" target="_blank" rel="noopener noreferrer" aria-label="View Live Demo" title="Live Demo">
                             <i class="fas fa-external-link-alt"></i>
                         </a>
                     </div>
@@ -477,7 +466,7 @@
                 <div class="project-item animate-on-scroll">
                     <div class="project-item-content">
                         <div class="project-item-header">
-                            <h3><a href="YOUR_LIVE_DEMO_URL" target="_blank" class="project-title-link">Next-Word-Predictor</a></h3>
+                            <h3><a href="#" target="_blank" class="project-title-link">Next-Word-Predictor</a></h3>
                             <div class="project-tags"><span>JavaScript</span><span>LSTM</span></div>
                         </div>
                         <p class="project-item-desc">A deep learning model utilizing Long Short-Term Memory (LSTM) networks for sequence-based text prediction.</p>
@@ -486,7 +475,7 @@
                         <a href="https://github.com/omm-prakash18/next-word-predictor" class="project-item-link" target="_blank" rel="noopener noreferrer" aria-label="View Source Code" title="Source Code">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="YOUR_LIVE_DEMO_URL" class="project-item-link" target="_blank" rel="noopener noreferrer" aria-label="View Live Demo" title="Live Demo">
+                        <a href="#" class="project-item-link" target="_blank" rel="noopener noreferrer" aria-label="View Live Demo" title="Live Demo">
                             <i class="fas fa-external-link-alt"></i>
                         </a>
                     </div>
@@ -495,7 +484,7 @@
                 <div class="project-item animate-on-scroll">
                     <div class="project-item-content">
                         <div class="project-item-header">
-                            <h3><a href="YOUR_LIVE_DEMO_URL" target="_blank" class="project-title-link">House Price Predictor</a></h3>
+                            <h3><a href="#" target="_blank" class="project-title-link">House Price Predictor</a></h3>
                             <div class="project-tags"><span>Jupyter Notebook</span><span>Scikit-Learn</span></div>
                         </div>
                         <p class="project-item-desc">A machine learning regression model built to predict housing prices based on multiple feature datasets.</p>
@@ -504,7 +493,7 @@
                         <a href="https://github.com/omm-prakash18/ML4E-INDUACTION" class="project-item-link" target="_blank" rel="noopener noreferrer" aria-label="View Source Code" title="Source Code">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="YOUR_LIVE_DEMO_URL" class="project-item-link" target="_blank" rel="noopener noreferrer" aria-label="View Live Demo" title="Live Demo">
+                        <a href="#" class="project-item-link" target="_blank" rel="noopener noreferrer" aria-label="View Live Demo" title="Live Demo">
                             <i class="fas fa-external-link-alt"></i>
                         </a>
                     </div>
@@ -513,7 +502,7 @@
                 <div class="project-item animate-on-scroll">
                     <div class="project-item-content">
                         <div class="project-item-header">
-                            <h3><a href="YOUR_LIVE_DEMO_URL" target="_blank" class="project-title-link">Number Recognizer</a></h3>
+                            <h3><a href="#" target="_blank" class="project-title-link">Number Recognizer</a></h3>
                             <div class="project-tags"><span>Python</span><span>Computer Vision</span></div>
                         </div>
                         <p class="project-item-desc">A computer vision application that classifies handwritten digits from pixel data.</p>
@@ -522,7 +511,7 @@
                         <a href="https://github.com/omm-prakash18/number-recogniser" class="project-item-link" target="_blank" rel="noopener noreferrer" aria-label="View Source Code" title="Source Code">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="YOUR_LIVE_DEMO_URL" class="project-item-link" target="_blank" rel="noopener noreferrer" aria-label="View Live Demo" title="Live Demo">
+                        <a href="#" class="project-item-link" target="_blank" rel="noopener noreferrer" aria-label="View Live Demo" title="Live Demo">
                             <i class="fas fa-external-link-alt"></i>
                         </a>
                     </div>
@@ -531,7 +520,7 @@
                 <div class="project-item animate-on-scroll">
                     <div class="project-item-content">
                         <div class="project-item-header">
-                            <h3><a href="YOUR_LIVE_DEMO_URL" target="_blank" class="project-title-link">Mini-Cursor</a></h3>
+                            <h3><a href="#" target="_blank" class="project-title-link">Mini-Cursor</a></h3>
                             <div class="project-tags"><span>JavaScript</span><span>Web</span></div>
                         </div>
                         <p class="project-item-desc">A lightweight, browser-based clone of the popular Cursor AI IDE interface.</p>
@@ -540,7 +529,7 @@
                         <a href="https://github.com/omm-prakash18/MINI-CURSOR" class="project-item-link" target="_blank" rel="noopener noreferrer" aria-label="View Source Code" title="Source Code">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="YOUR_LIVE_DEMO_URL" class="project-item-link" target="_blank" rel="noopener noreferrer" aria-label="View Live Demo" title="Live Demo">
+                        <a href="#" class="project-item-link" target="_blank" rel="noopener noreferrer" aria-label="View Live Demo" title="Live Demo">
                             <i class="fas fa-external-link-alt"></i>
                         </a>
                     </div>

@@ -9,11 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const loader = document.getElementById('loader');
     
     window.addEventListener('load', () => {
-        // Professional fix: Remove the artificial timeout. 
-        // Hide instantly once the browser is actually done loading.
         if (loader) {
             loader.classList.add('hidden');
-            setTimeout(() => loader.remove(), 500); // Clean up DOM
+            setTimeout(() => loader.remove(), 500); 
         }
         document.body.style.overflow = 'auto';
         initAnimations();
@@ -133,7 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
             resizeCanvas();
 
             function renderShader() {
-                // Professional fix: Respect accessibility preferences
                 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
                 
                 if (document.hidden || prefersReducedMotion) {
@@ -174,36 +171,6 @@ document.addEventListener('DOMContentLoaded', () => {
             console.warn("WebGL not supported, falling back to empty background.");
         }
     }
-
-    // ---------- CURSOR FOLLOWER ----------
-    const cursor = document.getElementById('cursorFollower');
-
-    document.addEventListener('mousemove', (e) => {
-        if(cursor) {
-            cursor.classList.add('active');
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        }
-    });
-
-    document.addEventListener('mouseleave', () => {
-        if(cursor) cursor.classList.remove('active');
-    });
-
-    document.querySelectorAll('a, button, .skill-card, .project-card, .learning-card').forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            if(cursor) {
-                cursor.style.transform = 'translate(-50%, -50%) scale(1.8)';
-                cursor.style.opacity = '0.3';
-            }
-        });
-        el.addEventListener('mouseleave', () => {
-            if(cursor) {
-                cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-                cursor.style.opacity = '0.6';
-            }
-        });
-    });
 
     // ---------- 3D TILT EFFECT ----------
     if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
