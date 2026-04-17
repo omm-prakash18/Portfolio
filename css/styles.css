@@ -1,4 +1,118 @@
 /* ============================================
+   DECORATIVE LOADER (Uiverse.io inspired)
+   ============================================ */
+.decorative-loader {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0.85;
+}
+.decorative-loader .loader {
+    --color-one: var(--accent-primary);
+    --color-two: var(--accent-secondary);
+    --color-three: color-mix(in srgb, var(--accent-primary) 60%, transparent);
+    --color-four: color-mix(in srgb, var(--accent-secondary) 60%, transparent);
+    --color-five: color-mix(in srgb, var(--accent-primary) 30%, transparent);
+    --time-animation: 2s;
+    --size: 0.7;
+    position: relative;
+    border-radius: 50%;
+    transform: scale(var(--size));
+    box-shadow:
+        0 0 25px 0 var(--color-three),
+        0 20px 50px 0 var(--color-four);
+    animation: colorize calc(var(--time-animation) * 3) ease-in-out infinite;
+}
+.decorative-loader .loader::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border-top: solid 1px var(--color-one);
+    border-bottom: solid 1px var(--color-two);
+    background: linear-gradient(180deg, var(--color-five), var(--color-four));
+    box-shadow:
+        inset 0 10px 10px 0 var(--color-three),
+        inset 0 -10px 10px 0 var(--color-four);
+}
+.decorative-loader .loader .box {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(
+        180deg,
+        var(--color-one) 30%,
+        var(--color-two) 70%
+    );
+    mask: url(#clipping);
+    -webkit-mask: url(#clipping);
+}
+.decorative-loader .loader svg {
+    position: absolute;
+}
+.decorative-loader .loader svg #clipping {
+    filter: contrast(15);
+    animation: roundness calc(var(--time-animation) / 2) linear infinite;
+}
+.decorative-loader .loader svg #clipping polygon {
+    filter: blur(7px);
+}
+.decorative-loader .loader svg #clipping polygon:nth-child(1) {
+    transform-origin: 75% 25%;
+    transform: rotate(90deg);
+}
+.decorative-loader .loader svg #clipping polygon:nth-child(2) {
+    transform-origin: 50% 50%;
+    animation: rotation var(--time-animation) linear infinite reverse;
+}
+.decorative-loader .loader svg #clipping polygon:nth-child(3) {
+    transform-origin: 50% 60%;
+    animation: rotation var(--time-animation) linear infinite;
+    animation-delay: calc(var(--time-animation) / -3);
+}
+.decorative-loader .loader svg #clipping polygon:nth-child(4) {
+    transform-origin: 40% 40%;
+    animation: rotation var(--time-animation) linear infinite reverse;
+}
+.decorative-loader .loader svg #clipping polygon:nth-child(5) {
+    transform-origin: 40% 40%;
+    animation: rotation var(--time-animation) linear infinite reverse;
+    animation-delay: calc(var(--time-animation) / -2);
+}
+.decorative-loader .loader svg #clipping polygon:nth-child(6) {
+    transform-origin: 60% 40%;
+    animation: rotation var(--time-animation) linear infinite;
+}
+.decorative-loader .loader svg #clipping polygon:nth-child(7) {
+    transform-origin: 60% 40%;
+    animation: rotation var(--time-animation) linear infinite;
+    animation-delay: calc(var(--time-animation) / -1.5);
+}
+@keyframes rotation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@keyframes roundness {
+    0% { filter: contrast(15); }
+    20% { filter: contrast(3); }
+    40% { filter: contrast(3); }
+    60% { filter: contrast(15); }
+    100% { filter: contrast(15); }
+}
+@keyframes colorize {
+    0% { filter: hue-rotate(0deg); }
+    20% { filter: hue-rotate(-30deg); }
+    40% { filter: hue-rotate(-60deg); }
+    60% { filter: hue-rotate(-90deg); }
+    80% { filter: hue-rotate(-45deg); }
+    100% { filter: hue-rotate(0deg); }
+}
+
+/* ============================================
    ACCESSIBILITY: FOCUS STATES
    ============================================ */
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
@@ -101,6 +215,35 @@ button {
 
 .section {
     padding: 100px 0;
+}
+
+/* ============================================
+   CURSOR FOLLOWER
+   ============================================ */
+/* Hide cursor by default on all devices... */
+.cursor-follower {
+    display: none; 
+}
+
+/* ...Only show it if the user has a fine-pointing device like a mouse */
+@media (pointer: fine) {
+    .cursor-follower {
+        display: block;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 2px solid var(--accent-primary);
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 10000;
+        transition: transform 0.15s ease, opacity 0.15s ease;
+        opacity: 0;
+        transform: translate(-50%, -50%);
+    }
+
+    .cursor-follower.active { opacity: 0.6; }
 }
 
 /* ============================================
@@ -794,67 +937,6 @@ button {
     background: var(--accent-primary);
     color: white;
     transform: translateY(-2px);
-}
-
-/* Styling for the new real photo */
-.profile-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 20px;
-    z-index: 1;
-}
-
-/* Styling for the Availability Status */
-.status-indicator {
-    position: absolute;
-    top: -16px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    padding: 6px 16px;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: var(--shadow-sm);
-    z-index: 10;
-    white-space: nowrap;
-}
-
-.status-dot {
-    width: 10px;
-    height: 10px;
-    background-color: #10b981; /* Emerald Green */
-    border-radius: 50%;
-    position: relative;
-}
-
-/* Pulsing effect for the green dot */
-.status-dot::after {
-    content: '';
-    position: absolute;
-    top: -4px;
-    left: -4px;
-    right: -4px;
-    bottom: -4px;
-    background-color: #10b981;
-    border-radius: 50%;
-    animation: pulse-status 2s infinite;
-    opacity: 0.4;
-}
-
-.status-text {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--text-primary);
-}
-
-@keyframes pulse-status {
-    0% { transform: scale(0.8); opacity: 0.5; }
-    50% { transform: scale(1.5); opacity: 0; }
-    100% { transform: scale(0.8); opacity: 0; }
 }
 
 /* ============================================
