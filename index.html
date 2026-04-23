@@ -15,28 +15,31 @@
     <meta property="og:image" content="https://your-domain.com/path-to-a-nice-screenshot-of-your-site.jpg">
 
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
 </head>
 <body>
-        <div class="decorative-loader" aria-hidden="true">
-            <div class="loader">
-                <div class="box"></div>
-                <svg width="0" height="0">
-                    <defs>
-                        <clipPath id="clipping" clipPathUnits="objectBoundingBox">
-                            <polygon points="0.5,0 0.6,0.2 0.8,0.2 0.7,0.4 0.8,0.6 0.6,0.6 0.5,0.8 0.4,0.6 0.2,0.6 0.3,0.4 0.2,0.2 0.4,0.2" />
-                            <polygon points="0.5,0 0.7,0.2 0.9,0.5 0.7,0.8 0.5,1 0.3,0.8 0.1,0.5 0.3,0.2" />
-                            <polygon points="0.5,0.1 0.8,0.3 0.9,0.7 0.5,0.9 0.1,0.7 0.2,0.3" />
-                            <polygon points="0.5,0.2 0.75,0.4 0.8,0.6 0.5,0.8 0.2,0.6 0.25,0.4" />
-                            <polygon points="0.5,0.3 0.7,0.5 0.5,0.7 0.3,0.5" />
-                            <polygon points="0.5,0.4 0.6,0.5 0.5,0.6 0.4,0.5" />
-                            <polygon points="0.5,0.5 0.55,0.55 0.5,0.6 0.45,0.55" />
-                        </clipPath>
-                    </defs>
-                </svg>
-            </div>
+    <div class="decorative-loader" aria-hidden="true">
+        <div class="loader-uiverse">
+            <div class="box"></div>
+            <svg width="0" height="0">
+                <defs>
+                    <clipPath id="clipping" clipPathUnits="objectBoundingBox">
+                        <polygon points="0.5,0 0.6,0.2 0.8,0.2 0.7,0.4 0.8,0.6 0.6,0.6 0.5,0.8 0.4,0.6 0.2,0.6 0.3,0.4 0.2,0.2 0.4,0.2" />
+                        <polygon points="0.5,0 0.7,0.2 0.9,0.5 0.7,0.8 0.5,1 0.3,0.8 0.1,0.5 0.3,0.2" />
+                        <polygon points="0.5,0.1 0.8,0.3 0.9,0.7 0.5,0.9 0.1,0.7 0.2,0.3" />
+                        <polygon points="0.5,0.2 0.75,0.4 0.8,0.6 0.5,0.8 0.2,0.6 0.25,0.4" />
+                        <polygon points="0.5,0.3 0.7,0.5 0.5,0.7 0.3,0.5" />
+                        <polygon points="0.5,0.4 0.6,0.5 0.5,0.6 0.4,0.5" />
+                        <polygon points="0.5,0.5 0.55,0.55 0.5,0.6 0.45,0.55" />
+                    </clipPath>
+                </defs>
+            </svg>
         </div>
+    </div>
+
     <canvas id="blueprintShaderGrid" class="blueprint-shader-grid"></canvas>
 
     <div class="cursor-follower" id="cursorFollower"></div>
@@ -44,37 +47,25 @@
     <div class="loader" id="loader">
         <div class="loader-content">
             <div class="loader-spinner"></div>
-            <p>Loading Portfolio...</p>
+            <p>Loading Workspace...</p>
         </div>
     </div>
 
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#hero" class="nav-logo">
+            <a href="#hero" class="nav-logo" aria-label="Home">
                 <span class="logo-bracket">&lt;</span>
                 <span class="logo-text">OPP</span>
                 <span class="logo-bracket">/&gt;</span>
             </a>
 
             <ul class="nav-menu" id="navMenu">
-                <li class="nav-item">
-                    <a href="#hero" class="nav-link active" data-section="hero">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link" data-section="about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#skills" class="nav-link" data-section="skills">Skills</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#projects" class="nav-link" data-section="projects">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#journey" class="nav-link" data-section="journey">Journey</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link" data-section="contact">Contact</a>
-                </li>
+                <li class="nav-item"><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link" data-section="about">About</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+                <li class="nav-item"><a href="#journey" class="nav-link" data-section="journey">Journey</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
             </ul>
 
             <div class="nav-actions">
@@ -178,12 +169,16 @@
             <div class="about-grid">
                 <div class="about-image animate-on-scroll">
                     <div class="about-img-wrapper">
+                        <div class="status-indicator">
+                            <span class="status-dot"></span>
+                            <span class="status-text">Available for Internships</span>
+                        </div>
                         <div class="about-avatar">
-                            <i class="fas fa-laptop-code"></i>
+                            <img src="images/profile.png" alt="Omm Prakash Padhiary" class="profile-img" loading="lazy">
                         </div>
                         <div class="experience-badge">
-                            <span class="exp-number"><i class="fas fa-seedling"></i></span>
-                            <span class="exp-text">Always<br>Learning</span>
+                            <span class="exp-number"><i class="fas fa-microchip"></i></span>
+                            <span class="exp-text">Building<br>Vision Sensors</span>
                         </div>
                     </div>
                 </div>
@@ -232,7 +227,7 @@
                             <span>Front-End Development</span>
                         </div>
                     </div>
-                    <a href="#" class="btn btn-primary" download>
+                    <a href="docs/Omm_Prakash_Resume.pdf" class="btn btn-primary" download="Omm_Prakash_Padhiary_Resume.pdf">
                         <i class="fas fa-download"></i>
                         <span>Download Resume</span>
                     </a>
@@ -558,6 +553,9 @@
                 <p class="section-subtitle">How I got here and where I'm heading</p>
             </div>
             <div class="timeline">
+                
+                <div class="timeline-progress" id="timelineProgress"></div>
+
                 <div class="timeline-item animate-on-scroll">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
